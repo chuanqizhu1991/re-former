@@ -1,0 +1,21 @@
+<h1>Please edit</h1>
+
+<form accept-charset="UTF-8" action="/forms/create" method="POST">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<label>Username:</label>
+<input type="text" id="username" name="form[username]"><br><br>
+<% @form.errors.full_messages_for(:username).each do |message|%>
+<div><%=message%></div>
+<%end%>
+<label>Email:<label>
+<input type="text" id="email" name="form[email]"><br><br>
+<% @form.errors.full_messages_for(:email).each do |message|%>
+<div><%=message%></div>
+<%end%>
+<label>Password:<label>
+<input type="password" id="password" name="form[password]"><br><br>
+<% @form.errors.full_messages_for(:password).each do |message|%>
+<div><%=message%></div>
+<%end%>
+<input type="submit" value="Submit">
+</form>

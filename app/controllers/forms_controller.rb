@@ -10,6 +10,17 @@ class FormsController < ApplicationController
             render :new
         end
     end
+    def edit
+        @form = Form.find(params[:id])
+    end
+    def update
+        @form = Form.find(params[:id])
+        if @form.update(form_params)
+            redirect_to @form
+        else
+            render :edit
+        end
+    end
     def form_params
         params.require(:form).permit(:username, :email,:password)
     end
